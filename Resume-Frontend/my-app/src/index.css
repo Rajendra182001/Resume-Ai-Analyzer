@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Custom animations */
+@keyframes pulse-custom {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+.animate-pulse {
+  animation: pulse-custom 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.delay-2000 {
+  animation-delay: 2s;
+}
