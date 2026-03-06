@@ -15,7 +15,7 @@ export default function ResumeAnalyzer() {
   const resultRef = useRef(null);
 
   // Spring Boot backend URL with /resume prefix
-  const API_BASE_URL = 'https://resume-ai-analyzer-gchj.onrender.com/resume';
+  const VITE_API_BASE_URL = 'https://resume-ai-analyzer-gchj.onrender.com/resume';
 
   const handleFileSelect = (e) => {
     const selectedFile = e.target.files?.[0];
@@ -46,7 +46,7 @@ export default function ResumeAnalyzer() {
 
       setProgress(60);
       
-      const response = await fetch(`${API_BASE_URL}/analyze`, {
+      const response = await fetch(`${VITE_API_BASE_URL}/analyze`, {
         method: 'POST',
         body: formData,
       });
@@ -89,7 +89,7 @@ export default function ResumeAnalyzer() {
 
       setProgress(60);
       
-      const response = await fetch(`${API_BASE_URL}/match`, {
+      const response = await fetch(`${VITE_API_BASE_URL}/match`, {
         method: 'POST',
         body: formData,
       });
@@ -127,7 +127,7 @@ export default function ResumeAnalyzer() {
 
       setProgress(60);
       
-      const response = await fetch(`${API_BASE_URL}/improve`, {
+      const response = await fetch(`${VITE_API_BASE_URL}/improve`, {
         method: 'POST',
         body: formData,
       });
@@ -162,7 +162,7 @@ export default function ResumeAnalyzer() {
     try {
       setProgress(60);
       
-      const response = await fetch(`${API_BASE_URL}/generate`, {
+      const response = await fetch(`${VITE_API_BASE_URL}/generate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'text/plain',
@@ -200,7 +200,7 @@ export default function ResumeAnalyzer() {
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await fetch(`${API_BASE_URL}/download`, {
+      const response = await fetch(`${VITE_API_BASE_URL}/download`, {
         method: 'POST',
         body: formData,
       });
