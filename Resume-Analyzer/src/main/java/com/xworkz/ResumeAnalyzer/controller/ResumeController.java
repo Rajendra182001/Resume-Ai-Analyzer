@@ -20,6 +20,10 @@ public class ResumeController {
         this.resumeService = resumeService;
         this.geminiService=geminiService;
     }
+    @GetMapping("/test")
+    public String test() {
+        return "Resume API running";
+    }
 
     @PostMapping("/analyze")
     public String analyzeResume(@RequestParam MultipartFile file) {

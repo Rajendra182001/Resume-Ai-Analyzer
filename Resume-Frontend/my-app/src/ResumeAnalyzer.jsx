@@ -15,7 +15,8 @@ export default function ResumeAnalyzer() {
   const resultRef = useRef(null);
 
   // Spring Boot backend URL with /resume prefix
-  const VITE_API_BASE_URL = 'https://resume-ai-analyzer-gchj.onrender.com/resume';
+  const VITE_API_BASE_URL = 'http://3.25.220.88:8080/resume';
+
 
   const handleFileSelect = (e) => {
     const selectedFile = e.target.files?.[0];
